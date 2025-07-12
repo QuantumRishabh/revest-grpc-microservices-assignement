@@ -1,14 +1,35 @@
-# 🔗 NestJS gRPC Microservices Demo
+# gRPC Microservices - NestJS Example
 
-This repository contains two microservices:
-- 📦 `product-service`: gRPC + Prisma
-- 🛒 `order-service`: REST + gRPC client + Prisma
+This repository contains two microservices built with NestJS using gRPC for inter-service communication.
 
-Each service has its own README with setup steps.
+## 🧩 Services
 
-## ⚙️ How to Run
+### 1. Product Service (`product-service/`)
+Handles product-related logic like create, update, get product by name, etc.
 
-1. Start PostgreSQL
-2. Generate Prisma client for both services
-3. Run Product Service
-4. Run Order Service
+### 2. Order Service (`order-service/`)
+Handles order creation, uses gRPC to get product info from `product-service`.
+
+## 📦 Technologies
+- NestJS
+- gRPC
+- Prisma
+- PostgreSQL
+- Docker (optional)
+
+## 🚀 How to Run
+
+```bash
+cd product-service
+npm install
+npx prisma generate
+npx prisma db push
+npm run start:dev
+
+
+cd order-service
+npm install
+npx prisma generate
+npx prisma db push
+npm run start:dev
+
